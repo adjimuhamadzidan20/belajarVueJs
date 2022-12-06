@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Conditional Vue</title>
+</head>
+<body>
+    <h1>Conditional Vue</h1>
+    
+    <div id="app">
+        <div style="width: 500px; text-align: justify;" v-if="tulisan">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ut blanditiis dolor, 
+            fugiat quo explicabo voluptatem exercitationem earum neque deserunt consequatur fugit sunt, 
+            aperiam aliquid. Natus voluptatum hic dolor ea?</p>
+        
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ut blanditiis dolor, 
+            fugiat quo explicabo voluptatem exercitationem earum neque deserunt consequatur fugit sunt, 
+            aperiam aliquid. Natus voluptatum hic dolor ea?</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ut blanditiis dolor, 
+            fugiat quo explicabo voluptatem exercitationem earum neque deserunt consequatur fugit sunt, 
+            aperiam aliquid. Natus voluptatum hic dolor ea?</p>
+        </div>
+
+        <button style="cursor: pointer;" @click="showContent" v-if="tulisan">Sembunyikan Paragraf</button>
+        <button style="cursor: pointer;" @click="showContent" v-if="!tulisan">Tampilkan Paragraf</button>
+    </div>
+    
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    tulisan: true
+                }
+            },
+            methods: {
+                showContent(event) {
+                    this.tulisan = this.tulisan = !this.tulisan
+                }
+            }
+        })   
+        
+        app.mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Perulangan</title>
+</head>
+<body>
+    <h1>Perulangan</h1>
+    
+    <div id="app" style="font-family: 'Times New Roman', Times, serif;">
+        <li v-for="(item, index) in mahasiswa" type="1">
+            {{status}} semester {{semester}} NPM 20194350190{{index}} {{item.nama}}
+        </li>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    status: 'Mahasiswa',
+                    mahasiswa: [
+                        {nama: 'Adji'}, 
+                        {nama: 'Reyhan'},
+                        {nama: 'Yadi'},
+                        {nama: 'Najib'},
+                        {nama: 'Ari'}
+                    ],
+                    semester: 7
+                }
+            }
+        })
+
+        app.mount('#app');
+    </script>
+</body>
+</html>

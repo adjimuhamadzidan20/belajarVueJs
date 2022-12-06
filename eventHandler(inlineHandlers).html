@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<title>Event Handler (Inline Handlers)</title>
+</head>
+<body>
+	<h1>Event Handler (Inline Handlers)</h1>
+
+	<div id="app">
+		<p>{{ text }}</p>
+		<p>{{ nama }}</p>
+		<p>Klik Button {{ klik }}</p>
+
+		<button @click="klik++" style="cursor: pointer; margin-right: 5px;">Klik disini +</button>
+		<button @click="klik--" style="cursor: pointer; margin-right: 5px;">Klik disini -</button>
+		<button @click="ubahText('Selamat Pagi..')" style="cursor: pointer;">Ubah text</button>
+	</div>
+
+	<script type="text/javascript">
+		// inline handlers
+		const app = Vue.createApp({
+			data() {
+				return {
+					text: 'belajar vue js lagi..',
+					nama: 'adjimuhamadzidan',
+					klik: 0
+				}
+			}, methods: {
+				ubahText(text) {
+					this.text = text
+				}
+			}
+		})
+
+		app.mount('#app');
+
+	</script>
+</body>
+</html>
