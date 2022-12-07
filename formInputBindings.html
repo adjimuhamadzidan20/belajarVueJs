@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<title>Form Input Bindings</title>
+</head>
+<body>
+	<h1>Form Input Bindings</h1>
+	<div id="content">
+		<p>Nama Mahasiswa : {{ nama }}</p>
+		<input type="text" placeholder="Masukan Nama" v-model="nama" style="width: 190px;">
+		<br>
+		<p>Semester : {{ semester }}</p>
+		<select v-model="semester" style="width: 200px;">
+			<option disabled value>Pilih Semester</option>
+			<option>Semester 1</option>
+			<option>Semester 2</option>
+			<option>Semester 3</option>
+			<option>Semester 4</option>
+			<option>Semester 5</option>
+			<option>Semester 6</option>
+			<option>Semester 7</option>
+			<option>Semester 8</option>
+		</select>
+		<br>
+		<p>Prodi / Jurusan : {{ jurusan }}</p>
+		<select v-model="jurusan" style="width: 200px;">
+			<option disabled value>Pilih Jurusan</option>
+			<option>Informatika</option>
+			<option>Teknik Industri</option>
+			<option>Arsitektur</option>
+			<option>Biologi</option>
+			<option>Bimbingan Konseling</option>
+			<option>Pend B. Inggris</option>
+			<option>Pend B. Indonesia</option>
+			<option>Ekonomi</option>
+		</select>
+		<br>
+		<p>Gender : {{ gender }}</p>
+		<input type="radio" id="Pria" value="Pria" name="jenisKelamin" v-model="gender">
+		<label for="Pria">Pria</label>
+		<input type="radio" id="Wanita" value="Wanita" name="jenisKelamin" v-model="gender">
+		<label for="Wanita">Wanita</label>
+		<br><br>
+		<button @click.submit="submit">Submit</button>
+	</div>
+
+	<script type="text/javascript">
+		const elemen = {
+			data() {
+				return {
+					nama: '',
+					semester: '',
+					jurusan: '',
+					gender: ''
+				}
+			},
+			methods: {
+				submit() {
+					alert(`${this.nama} ${this.semester} ${this.jurusan} ${this.gender}`);
+				}
+			} 
+		}
+
+		Vue.createApp(elemen).mount('#content');
+
+	</script>
+</body>
+</html>

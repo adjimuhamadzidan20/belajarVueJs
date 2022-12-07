@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<title>Class & Style Bindings</title>
+	<style>
+		.active {
+			color: white;
+			font-size: 15px;
+			font-family: sans-serif;
+			font-weight: bold;
+			background-color: dodgerblue;
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Class & Style Bindings</h1>
+
+	<div id="app">
+		<div v-for="(item, index) in namaNegara" :class="{active: isActive}" :style="style">
+			<p>{{ index }} {{ item.negara }}</p>
+		</div>
+		<button @click="switchColor">Ubah Style</button>		
+	</div>
+
+	<script type="text/javascript">
+		const app = Vue.createApp({
+			data() {
+				return {
+					namaNegara: [
+						{negara: 'Jerman'},
+						{negara: 'Perancis'},
+						{negara: 'Brazil'},
+						{negara: 'Argentina'},
+						{negara: 'Uruguay'},
+						{negara: 'Spanyol'},
+						{negara: 'Jepang'},
+						{negara: 'Kroasia'},
+						{negara: 'Belgia'},
+						{negara: 'Korea'}
+					],
+					isActive: false
+				}
+			},
+			methods: {
+				switchColor() {
+					this.isActive = !this.isActive
+				}
+			}
+		})
+
+		app.mount('#app');
+	</script>
+</body>
+</html>
