@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<title>Latihan 1</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Jadwal Mata Kuliah</h1>	
+	</header>
+	<main>
+		<div id="content">
+			<div class="card">
+				<div class="list-matkul">
+					<h2>Senin</h2>
+					<template v-for="list in senin" v-if="!isShowingSenin">
+						<p>{{ list.matkul }}</p>
+					</template>
+				</div>
+				<button type="button" @click="showListSenin" v-if="isShowingSenin">Lihat Matkul</button>
+				<button type="button" @click="showListSenin" v-if="!isShowingSenin">Sembunyikan</button>
+			</div>
+			<div class="card"> 
+				<div class="list-matkul">
+					<h2>Selasa</h2>
+					<template v-for="list in selasa" v-if="!isShowingSelasa">
+						<p>{{ list.matkul }}</p>
+					</template>
+				</div>
+				<button type="button" @click="showListSelasa" v-if="isShowingSelasa">Lihat Matkul</button>
+				<button type="button" @click="showListSelasa" v-if="!isShowingSelasa">Sembunyikan</button>
+			</div>
+			<div class="card">
+				<div class="list-matkul">
+					<h2>Rabu</h2>
+					<template v-for="list in rabu" v-if="!isShowingRabu">
+						<p>{{ list.matkul }}</p>
+					</template>
+				</div>
+				<button type="button" @click="showListRabu" v-if="isShowingRabu">Lihat Matkul</button>
+				<button type="button" @click="showListRabu" v-if="!isShowingRabu">Sembunyikan</button>
+			</div>
+			<div class="card">
+				<div class="list-matkul">
+					<h2>Kamis</h2>
+					<template v-for="list in kamis" v-if="!isShowingKamis">
+						<p>{{ list.matkul }}</p>
+					</template>
+				</div>
+				<button type="button" @click="showListKamis" v-if="isShowingKamis">Lihat Matkul</button>
+				<button type="button" @click="showListKamis" v-if="!isShowingKamis">Sembunyikan</button>
+			</div>
+			<div class="card">
+				<div class="list-matkul">
+					<h2>Jumat</h2>
+					<template v-for="list in jumat" v-if="!isShowingJumat">
+						<p>{{ list.matkul }}</p>
+					</template>
+				</div>
+				<button type="button" @click="showListJumat" v-if="isShowingJumat">Lihat Matkul</button>
+				<button type="button" @click="showListJumat" v-if="!isShowingJumat">Sembunyikan</button>
+			</div>
+		</div>
+	</main>
+	<br><br><br>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
